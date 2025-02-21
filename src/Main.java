@@ -1,86 +1,67 @@
-
-
-
-import java.util.Scanner;  // Импортируем класс Scanner
-
 public class Main {
     public static void main(String[] args) {
-        // Создаем один объект Scanner для ввода данных с клавиатуры
-        Scanner scanner = new Scanner(System.in);
+        byte clientOS = 1;
+        int clientDeviceYear = 2015;
+        int year = 2021;
+        int deliveryDistance = 95;
+        byte days = 1;
+        byte monthNumber = 12;
 
-        // Вводим возраст человека
-        System.out.print("Введите возраст человека: ");
-        int age = scanner.nextInt();
-        if (age >= 18) {
-            System.out.println("Если возраст человека равен " + age + ", то он совершеннолетний.");
-        } else {
-            System.out.println("Если возраст человека равен " + age + ", то он не достиг совершеннолетия, нужно немного подождать.");
-        }
-
-
-        System.out.print("Введите температуру: ");
-        int temperature = scanner.nextInt();  // Вводим число
-
-        if (temperature < 5) {
-            System.out.println("На улице " + temperature + " градусов, нужно надеть шапку.");
-        } else {
-            System.out.println("На улице " + temperature + " градусов, можно идти без шапки.");
-        }
-
-
-        System.out.print("Введите скорость автомобиля: ");
-        int speed = scanner.nextInt();
-        if (speed > 60) {
-            System.out.println("Если скорость " + speed + " км/ч, то придется заплатить штраф.");
-        } else {
-            System.out.println("Если скорость " + speed + " км/ч, то можно ездить спокойно.");
-        }
-
-
-        System.out.print("Введите возраст человека: ");
-        int years = scanner.nextInt();
-
-        if (years >= 2 && years <= 6) {
-            System.out.println("Если возраст человека равен " + years + ", то ему нужно ходить в детский сад.");
-        } else if (years >= 7 && years <= 17) {
-            System.out.println("Если возраст человека равен " + years + ", то ему нужно ходить в школу.");
-        } else if (years >= 18 && years <= 24) {
-            System.out.println("Если возраст человека равен " + years + ", то ему нужно ходить в университет.");
-        } else if (years > 24) {
-            System.out.println("Если возраст человека равен " + years + ", то ему пора ходить на работу.");
-        }
-
-
-        System.out.print("Введите количество людей в вагоне: ");
-        int peopleInTrain = scanner.nextInt();
-        if (peopleInTrain < 102) {
-            if (peopleInTrain < 60) {
-                System.out.println("Есть сидячие места.");
-            } else {
-                System.out.println("Есть только стоячие места.");
+        if (clientOS == 0) {
+            System.out.println("Установите версию приложения для iOS по ссылке.");
+            if (clientDeviceYear < 2015) {
+                System.out.println("Установите облегченную версию приложения для iOS по ссылке.");
+            }
+        } else if (clientOS == 1) {
+            System.out.println("Установите версию приложения для Android по ссылке.");
+            if (clientDeviceYear < 2015) {
+                System.out.println("Установите облегченную версию приложения для Android по ссылке.");
             }
         } else {
-            System.out.println("Вагон полностью забит.");
+            System.out.println("Неизвестная операционная система."); // Обработка некорректного clientOS
         }
 
-
-        System.out.print("Введите первое число: ");
-        int one = scanner.nextInt();
-        System.out.print("Введите второе число: ");
-        int two = scanner.nextInt();
-        System.out.print("Введите третье число: ");
-        int three = scanner.nextInt();
-
-        if (one >= two && one >= three) {
-            System.out.println("Наибольшее число: " + one);
-        } else if (two >= one && two >= three) {
-            System.out.println("Наибольшее число: " + two);
+        if (year < 1584) {
+            System.out.println(year + " год должен быть больше 1584 для определения високосности.");
         } else {
-            System.out.println("Наибольшее число: " + three);
+            if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+                System.out.println(year + " год является високосным.");
+            } else {
+                System.out.println(year + " год не является високосным.");
+            }
         }
 
+        if (deliveryDistance < 0) {
+            System.out.println("Некорректное значение расстояния.");
+        } else if (deliveryDistance <= 20) {
+            System.out.println("Потребуется дней: " + days);
+        } else if (deliveryDistance <= 60) {
+            System.out.println("Потребуется дней: " + (days + 1));
+        } else if (deliveryDistance <= 100) {
+            System.out.println("Потребуется дней: " + (days + 2));
+        } else {
+            System.out.println("Доставки нет.");
+        }
 
-        scanner.close();
+        if (monthNumber >= 1 && monthNumber <= 12) {
+            String season = "";
+            switch (monthNumber) {
+                case 1, 2, 12:
+                    season = "Зима";
+                    break;
+                case 3, 4, 5:
+                    season = "Весна";
+                    break;
+                case 6, 7, 8:
+                    season = "Лето";
+                    break;
+                case 9, 10, 11:
+                    season = "Осень";
+                    break;
+            }
+            System.out.println(season);
+        } else {
+            System.out.println("Номер месяца больше возможного.");
+        }
     }
 }
-
