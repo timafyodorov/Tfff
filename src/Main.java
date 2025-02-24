@@ -9,39 +9,28 @@ public class Main {
             if (clientDeviceYear < 2015) {
                 System.out.println("Установите облегченную версию приложения для iOS по ссылке.");
             } else {
-                if (clientDeviceYear >= 2015) {
-                    System.out.println("Установите полную версию приложения для iOS по ссылке.");
-                }
+                System.out.println("Установите полную версию приложения для iOS по ссылке.");
             }
+
+
         } else if (clientOS == 1) {
             System.out.println("Установите версию приложения для Android по ссылке.");
             if (clientDeviceYear < 2015) {
                 System.out.println("Установите облегченную версию приложения для Android по ссылке.");
             } else {
-                if (clientDeviceYear >= 2015) {
-                    System.out.println("Установите полную версию приложения для Android по ссылке.");
-                }
+                System.out.println("Установите полную версию приложения для Android по ссылке.");
             }
         } else {
             System.out.println("Неизвестная операционная система.");
         }
 
+
         if (year < 1584) {
-            System.out.println(year + " год должен быть больше 1584 для определения високосности.");
+            System.out.println("Год " + year + " не подходит для определения високосности.");
+        } else if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
+            System.out.println(year + " год является високосным.");
         } else {
-            if (year % 4 == 0) {
-                if (year % 100 != 0) {
-                    System.out.println(year + " год является високосным.");
-                } else {
-                    if (year % 400 == 0) {
-                        System.out.println(year + " год является високосным.");
-                    } else {
-                        System.out.println(year + " год не является високосным.");
-                    }
-                }
-            } else {
-                System.out.println(year + " год не является високосным.");
-            }
+            System.out.println(year + " год не является високосным.");
         }
 
 
