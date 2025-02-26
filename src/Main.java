@@ -1,88 +1,59 @@
-
-
-
-import java.util.Scanner;  // Импортируем класс Scanner
-
 public class Main {
     public static void main(String[] args) {
-        // Создаем один объект Scanner для ввода данных с клавиатуры
-        Scanner scanner = new Scanner(System.in);
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(i);
+        }
 
-        // Вводим возраст человека
-        System.out.print("Введите возраст человека: ");
-        int age = scanner.nextInt();
-        if (age >= 18) {
-            System.out.println("Если возраст человека равен " + age + ", то он совершеннолетний.");
-        } else {
-            System.out.println("Если возраст человека равен " + age + ", то он не достиг совершеннолетия, нужно немного подождать.");
+        for (int a = 10; a >= 1; a--) {
+            System.out.println(a);
+        }
+
+        for (int z = 0; z <= 17; z += 2) {
+            System.out.println(z);
+        }
+
+        for (int y = 10; y >= -10; y--) {
+            System.out.println(y);
+        }
+
+        for (int year = 1904; year <= 2096; year += 4) {
+            System.out.println(year + " год является високосным");
+        }
+
+        for (int i = 7; i <= 98; i += 7) {
+            System.out.print(i + " ");
         }
 
 
-        System.out.print("Введите температуру: ");
-        int temperature = scanner.nextInt();  // Вводим число
+        int number = 1;
+        while (number <= 512) {
+            System.out.print(number + " ");
+            number *= 2;
+        }
 
-        if (temperature < 5) {
-            System.out.println("На улице " + temperature + " градусов, нужно надеть шапку.");
-        } else {
-            System.out.println("На улице " + temperature + " градусов, можно идти без шапки.");
+        int monthlyDeposit = 29000;
+        int totalSavings = 0;
+        for (int month = 1; month <= 12; month++) {
+            totalSavings += monthlyDeposit;
+            System.out.println("Месяц " + month + ", сумма накоплений равна " + totalSavings + " рублей");
+        }
+
+        int monthlyContribution = 29000;
+        double balance = 0;
+
+
+        for (int month = 1; month <= 12; month++) {
+            balance += monthlyContribution;
+            balance += monthlyContribution * 0.01;
+            System.out.println("Месяц " + month + ", сумма накоплений равна " + String.format("%.2f", balance) + " рублей");
+        }
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.println("2 * " + i + " = " + (2 * i));
         }
 
 
-        System.out.print("Введите скорость автомобиля: ");
-        int speed = scanner.nextInt();
-        if (speed > 60) {
-            System.out.println("Если скорость " + speed + " км/ч, то придется заплатить штраф.");
-        } else {
-            System.out.println("Если скорость " + speed + " км/ч, то можно ездить спокойно.");
-        }
-
-
-        System.out.print("Введите возраст человека: ");
-        int years = scanner.nextInt();
-
-        if (years >= 2 && years <= 6) {
-            System.out.println("Если возраст человека равен " + years + ", то ему нужно ходить в детский сад.");
-        } else if (years >= 7 && years <= 17) {
-            System.out.println("Если возраст человека равен " + years + ", то ему нужно ходить в школу.");
-        } else if (years >= 18 && years <= 24) {
-            System.out.println("Если возраст человека равен " + years + ", то ему нужно ходить в университет.");
-        } else if (years > 24) {
-            System.out.println("Если возраст человека равен " + years + ", то ему пора ходить на работу.");
-        }
-
-
-        System.out.print("Введите количество людей в вагоне: ");
-        int peopleInTrain = scanner.nextInt();
-        if (peopleInTrain < 102) {
-            if (peopleInTrain < 60) {
-                System.out.println("Есть сидячие места.");
-            } else {
-                System.out.println("Есть только стоячие места.");
-            }
-        } else {
-            System.out.println("Вагон полностью забит.");
-        }
-
-
-        System.out.print("Введите первое число: ");
-        int one = scanner.nextInt();
-        System.out.print("Введите второе число: ");
-        int two = scanner.nextInt();
-        System.out.print("Введите третье число: ");
-        int three = scanner.nextInt();
-
-        if (one >= two && one >= three) {
-            System.out.println("Наибольшее число: " + one);
-        } else if (two >= one && two >= three) {
-            System.out.println("Наибольшее число: " + two);
-        } else {
-            System.out.println("Наибольшее число: " + three);
-        }
-
-
-
-
-        scanner.close();
     }
 }
+
 
