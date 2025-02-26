@@ -1,81 +1,59 @@
 public class Main {
     public static void main(String[] args) {
-        byte clientOS = 1;
-        int clientDeviceYear = 2015;
-        int year = 2021;
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(i);
+        }
 
-        if (clientOS == 0) {
-            System.out.println("Установите версию приложения для iOS по ссылке.");
-            if (clientDeviceYear < 2015) {
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке.");
-            } else {
-                System.out.println("Установите полную версию приложения для iOS по ссылке.");
-            }
+        for (int a = 10; a >= 1; a--) {
+            System.out.println(a);
+        }
 
+        for (int z = 0; z <= 17; z += 2) {
+            System.out.println(z);
+        }
 
-        } else if (clientOS == 1) {
-            System.out.println("Установите версию приложения для Android по ссылке.");
-            if (clientDeviceYear < 2015) {
-                System.out.println("Установите облегченную версию приложения для Android по ссылке.");
-            } else {
-                System.out.println("Установите полную версию приложения для Android по ссылке.");
-            }
-        } else {
-            System.out.println("Неизвестная операционная система.");
+        for (int y = 10; y >= -10; y--) {
+            System.out.println(y);
+        }
+
+        for (int year = 1904; year <= 2096; year += 4) {
+            System.out.println(year + " год является високосным");
+        }
+
+        for (int i = 7; i <= 98; i += 7) {
+            System.out.print(i + " ");
         }
 
 
-        if (year < 1584) {
-            System.out.println("Год " + year + " не подходит для определения високосности.");
-        } else if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
-            System.out.println(year + " год является високосным.");
-        } else {
-            System.out.println(year + " год не является високосным.");
+        int number = 1;
+        while (number <= 512) {
+            System.out.print(number + " ");
+            number *= 2;
+        }
+
+        int monthlyDeposit = 29000;
+        int totalSavings = 0;
+        for (int month = 1; month <= 12; month++) {
+            totalSavings += monthlyDeposit;
+            System.out.println("Месяц " + month + ", сумма накоплений равна " + totalSavings + " рублей");
+        }
+
+        int monthlyContribution = 29000;
+        double balance = 0;
+
+
+        for (int month = 1; month <= 12; month++) {
+            balance += monthlyContribution;
+            balance += monthlyContribution * 0.01;
+            System.out.println("Месяц " + month + ", сумма накоплений равна " + String.format("%.2f", balance) + " рублей");
+        }
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.println("2 * " + i + " = " + (2 * i));
         }
 
 
-        int deliveryDistance = 95;
-        String days = "";
-        if (deliveryDistance < 0) {
-            System.out.println("Некорректное значение расстояния.");
-        } else if (deliveryDistance <= 20) {
-            System.out.println("Потребуется дней: " + days);
-        } else if (deliveryDistance <= 60) {
-            System.out.println("Потребуется дней: " + (days + 1));
-        } else if (deliveryDistance <= 100) {
-            System.out.println("Потребуется дней: " + (days + 2));
-        } else {
-            System.out.println("Доставки нет.");
-        }
-
-        int monthNumber = 12;
-        if (monthNumber >= 1 && monthNumber <= 12) {
-            String season = "";
-            switch (monthNumber) {
-                case 1:
-                case 2:
-                case 12:
-                    season = "Зима";
-                    break;
-                case 3:
-                case 4:
-                case 5:
-                    season = "Весна";
-                    break;
-                case 6:
-                case 7:
-                case 8:
-                    season = "Лето";
-                    break;
-                case 9:
-                case 10:
-                case 11:
-                    season = "Осень";
-                    break;
-            }
-            System.out.println(season);
-        } else {
-            System.out.println("Номер месяца больше возможного.");
-        }
     }
 }
+
+
